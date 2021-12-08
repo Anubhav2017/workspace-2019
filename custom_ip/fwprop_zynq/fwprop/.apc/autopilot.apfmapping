@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="fwprop.cpp" path="/home/anubhav/workspace-2019/custom_ip/fwprop_zynq/fwprop.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="fwprop.cpp" path="/home/anubhav/workspace-2019/custom_ip/fwprop_zynq/fwprop.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

@@ -1,0 +1,753 @@
+
+
+================================================================
+== Vivado HLS Report for 'backward_fcc'
+================================================================
+* Date:           Mon Nov  8 20:16:15 2021
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        backprop
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.750 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |             |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |        ?|        ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 1.1  |        ?|        ?|        19|          -|          -|     ?|    no    |
+        |- Loop 2     |        ?|        ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 2.1  |        ?|        ?|        13|          -|          -|     ?|    no    |
+        |- Loop 3     |        ?|        ?|         2|          -|          -|     ?|    no    |
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 63
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 28 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 2 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 9 
+28 --> 29 52 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 48 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 35 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 28 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 60 
+59 --> 58 
+60 --> 61 
+61 --> 62 
+62 --> 63 
+63 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %x) nounwind, !map !7"   --->   Operation 64 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %w) nounwind, !map !13"   --->   Operation 65 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %y) nounwind, !map !17"   --->   Operation 66 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %b) nounwind, !map !21"   --->   Operation 67 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %dx) nounwind, !map !25"   --->   Operation 68 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %dy) nounwind, !map !29"   --->   Operation 69 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %db) nounwind, !map !33"   --->   Operation 70 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %dw) nounwind, !map !37"   --->   Operation 71 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %xdim) nounwind, !map !41"   --->   Operation 72 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %ydim) nounwind, !map !47"   --->   Operation 73 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([13 x i8]* @backward_fcc_str) nounwind"   --->   Operation 74 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (1.00ns)   --->   "%ydim_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %ydim) nounwind" [backprop.cpp:1]   --->   Operation 75 'read' 'ydim_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 76 [1/1] (1.00ns)   --->   "%xdim_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %xdim) nounwind" [backprop.cpp:1]   --->   Operation 76 'read' 'xdim_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %x, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [backprop.cpp:3]   --->   Operation 77 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %w, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [backprop.cpp:4]   --->   Operation 78 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %y, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [backprop.cpp:5]   --->   Operation 79 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %b, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [backprop.cpp:6]   --->   Operation 80 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %dx, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [backprop.cpp:7]   --->   Operation 81 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %dw, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [backprop.cpp:8]   --->   Operation 82 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %dy, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [backprop.cpp:9]   --->   Operation 83 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %db, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [backprop.cpp:10]   --->   Operation 84 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %xdim, [10 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [backprop.cpp:11]   --->   Operation 85 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %ydim, [10 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [backprop.cpp:12]   --->   Operation 86 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (1.76ns)   --->   "br label %.loopexit" [backprop.cpp:15]   --->   Operation 87 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 8.75>
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "%i_0 = phi i31 [ 0, %0 ], [ %i, %.loopexit.loopexit ]"   --->   Operation 88 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 89 [1/1] (0.00ns)   --->   "%zext_ln15 = zext i31 %i_0 to i32" [backprop.cpp:15]   --->   Operation 89 'zext' 'zext_ln15' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 90 [1/1] (2.47ns)   --->   "%icmp_ln15 = icmp slt i32 %zext_ln15, %xdim_read" [backprop.cpp:15]   --->   Operation 90 'icmp' 'icmp_ln15' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 91 [1/1] (2.52ns)   --->   "%i = add i31 %i_0, 1" [backprop.cpp:15]   --->   Operation 91 'add' 'i' <Predicate = true> <Delay = 2.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 92 [1/1] (0.00ns)   --->   "br i1 %icmp_ln15, label %.preheader3.preheader, label %.preheader2.preheader" [backprop.cpp:15]   --->   Operation 92 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 93 [7/7] (8.75ns)   --->   "%dy_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:17]   --->   Operation 93 'readreq' 'dy_rd_req' <Predicate = (icmp_ln15)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 94 [1/1] (1.76ns)   --->   "br label %.preheader2" [backprop.cpp:22]   --->   Operation 94 'br' <Predicate = (!icmp_ln15)> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 8.75>
+ST_3 : Operation 95 [6/7] (8.75ns)   --->   "%dy_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:17]   --->   Operation 95 'readreq' 'dy_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 8.75>
+ST_4 : Operation 96 [5/7] (8.75ns)   --->   "%dy_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:17]   --->   Operation 96 'readreq' 'dy_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 8.75>
+ST_5 : Operation 97 [4/7] (8.75ns)   --->   "%dy_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:17]   --->   Operation 97 'readreq' 'dy_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 8.75>
+ST_6 : Operation 98 [3/7] (8.75ns)   --->   "%dy_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:17]   --->   Operation 98 'readreq' 'dy_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 8.75>
+ST_7 : Operation 99 [2/7] (8.75ns)   --->   "%dy_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:17]   --->   Operation 99 'readreq' 'dy_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 8.75>
+ST_8 : Operation 100 [1/1] (0.00ns)   --->   "%zext_ln17 = zext i31 %i_0 to i64" [backprop.cpp:17]   --->   Operation 100 'zext' 'zext_ln17' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 101 [1/1] (0.00ns)   --->   "%dx_addr = getelementptr inbounds float* %dx, i64 %zext_ln17" [backprop.cpp:17]   --->   Operation 101 'getelementptr' 'dx_addr' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 102 [1/7] (8.75ns)   --->   "%dy_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:17]   --->   Operation 102 'readreq' 'dy_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 103 [1/1] (1.76ns)   --->   "br label %.preheader3" [backprop.cpp:16]   --->   Operation 103 'br' <Predicate = true> <Delay = 1.76>
+
+State 9 <SV = 8> <Delay = 2.55>
+ST_9 : Operation 104 [1/1] (0.00ns)   --->   "%j_0 = phi i31 [ %j, %1 ], [ 0, %.preheader3.preheader ]"   --->   Operation 104 'phi' 'j_0' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 105 [1/1] (0.00ns)   --->   "%phi_mul = phi i32 [ %add_ln17_1, %1 ], [ 0, %.preheader3.preheader ]" [backprop.cpp:17]   --->   Operation 105 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 106 [1/1] (0.00ns)   --->   "%zext_ln16 = zext i31 %j_0 to i32" [backprop.cpp:16]   --->   Operation 106 'zext' 'zext_ln16' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 107 [1/1] (2.47ns)   --->   "%icmp_ln16 = icmp slt i32 %zext_ln16, %ydim_read" [backprop.cpp:16]   --->   Operation 107 'icmp' 'icmp_ln16' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 108 [1/1] (2.52ns)   --->   "%j = add i31 %j_0, 1" [backprop.cpp:16]   --->   Operation 108 'add' 'j' <Predicate = true> <Delay = 2.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 109 [1/1] (0.00ns)   --->   "br i1 %icmp_ln16, label %1, label %.loopexit.loopexit" [backprop.cpp:16]   --->   Operation 109 'br' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 110 [1/1] (2.55ns)   --->   "%add_ln17_1 = add i32 %phi_mul, %xdim_read" [backprop.cpp:17]   --->   Operation 110 'add' 'add_ln17_1' <Predicate = (icmp_ln16)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 111 [1/1] (2.55ns)   --->   "%add_ln17 = add nsw i32 %zext_ln15, %phi_mul" [backprop.cpp:17]   --->   Operation 111 'add' 'add_ln17' <Predicate = (icmp_ln16)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 112 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 112 'br' <Predicate = (!icmp_ln16)> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 8.75>
+ST_10 : Operation 113 [1/1] (0.00ns)   --->   "%sext_ln17 = sext i32 %add_ln17 to i64" [backprop.cpp:17]   --->   Operation 113 'sext' 'sext_ln17' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 114 [1/1] (0.00ns)   --->   "%w_addr = getelementptr inbounds float* %w, i64 %sext_ln17" [backprop.cpp:17]   --->   Operation 114 'getelementptr' 'w_addr' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 115 [7/7] (8.75ns)   --->   "%w_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %w_addr, i32 1) nounwind" [backprop.cpp:17]   --->   Operation 115 'readreq' 'w_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 8.75>
+ST_11 : Operation 116 [6/7] (8.75ns)   --->   "%w_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %w_addr, i32 1) nounwind" [backprop.cpp:17]   --->   Operation 116 'readreq' 'w_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 12 <SV = 11> <Delay = 8.75>
+ST_12 : Operation 117 [5/7] (8.75ns)   --->   "%w_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %w_addr, i32 1) nounwind" [backprop.cpp:17]   --->   Operation 117 'readreq' 'w_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 13 <SV = 12> <Delay = 8.75>
+ST_13 : Operation 118 [4/7] (8.75ns)   --->   "%w_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %w_addr, i32 1) nounwind" [backprop.cpp:17]   --->   Operation 118 'readreq' 'w_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 14 <SV = 13> <Delay = 8.75>
+ST_14 : Operation 119 [3/7] (8.75ns)   --->   "%w_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %w_addr, i32 1) nounwind" [backprop.cpp:17]   --->   Operation 119 'readreq' 'w_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 15 <SV = 14> <Delay = 8.75>
+ST_15 : Operation 120 [2/7] (8.75ns)   --->   "%w_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %w_addr, i32 1) nounwind" [backprop.cpp:17]   --->   Operation 120 'readreq' 'w_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 16 <SV = 15> <Delay = 8.75>
+ST_16 : Operation 121 [1/7] (8.75ns)   --->   "%w_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %w_addr, i32 1) nounwind" [backprop.cpp:17]   --->   Operation 121 'readreq' 'w_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 17 <SV = 16> <Delay = 8.75>
+ST_17 : Operation 122 [1/1] (8.75ns)   --->   "%dy_read = call float @_ssdm_op_Read.m_axi.floatP(float* %dy) nounwind" [backprop.cpp:17]   --->   Operation 122 'read' 'dy_read' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 123 [1/1] (8.75ns)   --->   "%w_addr_read = call float @_ssdm_op_Read.m_axi.floatP(float* %w_addr) nounwind" [backprop.cpp:17]   --->   Operation 123 'read' 'w_addr_read' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 18 <SV = 17> <Delay = 5.70>
+ST_18 : Operation 124 [4/4] (5.70ns)   --->   "%tmp = fmul float %dy_read, %w_addr_read" [backprop.cpp:17]   --->   Operation 124 'fmul' 'tmp' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 5.70>
+ST_19 : Operation 125 [3/4] (5.70ns)   --->   "%tmp = fmul float %dy_read, %w_addr_read" [backprop.cpp:17]   --->   Operation 125 'fmul' 'tmp' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 5.70>
+ST_20 : Operation 126 [2/4] (5.70ns)   --->   "%tmp = fmul float %dy_read, %w_addr_read" [backprop.cpp:17]   --->   Operation 126 'fmul' 'tmp' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 8.75>
+ST_21 : Operation 127 [1/4] (5.70ns)   --->   "%tmp = fmul float %dy_read, %w_addr_read" [backprop.cpp:17]   --->   Operation 127 'fmul' 'tmp' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 128 [1/1] (8.75ns)   --->   "%dx_addr_req = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %dx_addr, i32 1) nounwind" [backprop.cpp:17]   --->   Operation 128 'writereq' 'dx_addr_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 22 <SV = 21> <Delay = 8.75>
+ST_22 : Operation 129 [1/1] (8.75ns)   --->   "call void @_ssdm_op_Write.m_axi.floatP(float* %dx_addr, float %tmp, i4 -1) nounwind" [backprop.cpp:17]   --->   Operation 129 'write' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 23 <SV = 22> <Delay = 8.75>
+ST_23 : Operation 130 [5/5] (8.75ns)   --->   "%dx_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %dx_addr) nounwind" [backprop.cpp:17]   --->   Operation 130 'writeresp' 'dx_addr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 24 <SV = 23> <Delay = 8.75>
+ST_24 : Operation 131 [4/5] (8.75ns)   --->   "%dx_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %dx_addr) nounwind" [backprop.cpp:17]   --->   Operation 131 'writeresp' 'dx_addr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 25 <SV = 24> <Delay = 8.75>
+ST_25 : Operation 132 [3/5] (8.75ns)   --->   "%dx_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %dx_addr) nounwind" [backprop.cpp:17]   --->   Operation 132 'writeresp' 'dx_addr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 26 <SV = 25> <Delay = 8.75>
+ST_26 : Operation 133 [2/5] (8.75ns)   --->   "%dx_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %dx_addr) nounwind" [backprop.cpp:17]   --->   Operation 133 'writeresp' 'dx_addr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 27 <SV = 26> <Delay = 8.75>
+ST_27 : Operation 134 [1/5] (8.75ns)   --->   "%dx_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %dx_addr) nounwind" [backprop.cpp:17]   --->   Operation 134 'writeresp' 'dx_addr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_27 : Operation 135 [1/1] (0.00ns)   --->   "br label %.preheader3" [backprop.cpp:16]   --->   Operation 135 'br' <Predicate = true> <Delay = 0.00>
+
+State 28 <SV = 2> <Delay = 8.75>
+ST_28 : Operation 136 [1/1] (0.00ns)   --->   "%i1_0 = phi i31 [ %i_1, %3 ], [ 0, %.preheader2.preheader ]"   --->   Operation 136 'phi' 'i1_0' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 137 [1/1] (0.00ns)   --->   "%phi_mul1 = phi i32 [ %add_ln22, %3 ], [ 0, %.preheader2.preheader ]" [backprop.cpp:22]   --->   Operation 137 'phi' 'phi_mul1' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 138 [1/1] (2.55ns)   --->   "%add_ln22 = add i32 %phi_mul1, %xdim_read" [backprop.cpp:22]   --->   Operation 138 'add' 'add_ln22' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 139 [1/1] (0.00ns)   --->   "%zext_ln22 = zext i31 %i1_0 to i32" [backprop.cpp:22]   --->   Operation 139 'zext' 'zext_ln22' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 140 [1/1] (2.47ns)   --->   "%icmp_ln22 = icmp slt i32 %zext_ln22, %ydim_read" [backprop.cpp:22]   --->   Operation 140 'icmp' 'icmp_ln22' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 141 [1/1] (2.52ns)   --->   "%i_1 = add i31 %i1_0, 1" [backprop.cpp:22]   --->   Operation 141 'add' 'i_1' <Predicate = true> <Delay = 2.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 142 [1/1] (0.00ns)   --->   "br i1 %icmp_ln22, label %.preheader1.preheader, label %.preheader.preheader" [backprop.cpp:22]   --->   Operation 142 'br' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 143 [7/7] (8.75ns)   --->   "%x_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %x, i32 %xdim_read) nounwind" [backprop.cpp:24]   --->   Operation 143 'readreq' 'x_rd_req' <Predicate = (icmp_ln22)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_28 : Operation 144 [7/7] (8.75ns)   --->   "%dy_rd_req3 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:30]   --->   Operation 144 'readreq' 'dy_rd_req3' <Predicate = (!icmp_ln22)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 29 <SV = 3> <Delay = 8.75>
+ST_29 : Operation 145 [6/7] (8.75ns)   --->   "%x_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %x, i32 %xdim_read) nounwind" [backprop.cpp:24]   --->   Operation 145 'readreq' 'x_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 30 <SV = 4> <Delay = 8.75>
+ST_30 : Operation 146 [5/7] (8.75ns)   --->   "%x_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %x, i32 %xdim_read) nounwind" [backprop.cpp:24]   --->   Operation 146 'readreq' 'x_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 31 <SV = 5> <Delay = 8.75>
+ST_31 : Operation 147 [4/7] (8.75ns)   --->   "%x_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %x, i32 %xdim_read) nounwind" [backprop.cpp:24]   --->   Operation 147 'readreq' 'x_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 32 <SV = 6> <Delay = 8.75>
+ST_32 : Operation 148 [3/7] (8.75ns)   --->   "%x_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %x, i32 %xdim_read) nounwind" [backprop.cpp:24]   --->   Operation 148 'readreq' 'x_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 33 <SV = 7> <Delay = 8.75>
+ST_33 : Operation 149 [2/7] (8.75ns)   --->   "%x_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %x, i32 %xdim_read) nounwind" [backprop.cpp:24]   --->   Operation 149 'readreq' 'x_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 34 <SV = 8> <Delay = 8.75>
+ST_34 : Operation 150 [1/1] (0.00ns)   --->   "%zext_ln24 = zext i31 %i1_0 to i64" [backprop.cpp:24]   --->   Operation 150 'zext' 'zext_ln24' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 151 [1/1] (0.00ns)   --->   "%dy_addr = getelementptr inbounds float* %dy, i64 %zext_ln24" [backprop.cpp:24]   --->   Operation 151 'getelementptr' 'dy_addr' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 152 [1/1] (0.00ns)   --->   "%sext_ln24 = sext i32 %phi_mul1 to i64" [backprop.cpp:24]   --->   Operation 152 'sext' 'sext_ln24' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 153 [1/1] (0.00ns)   --->   "%dw_addr = getelementptr inbounds float* %dw, i64 %sext_ln24" [backprop.cpp:24]   --->   Operation 153 'getelementptr' 'dw_addr' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 154 [1/7] (8.75ns)   --->   "%x_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %x, i32 %xdim_read) nounwind" [backprop.cpp:24]   --->   Operation 154 'readreq' 'x_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_34 : Operation 155 [1/1] (8.75ns)   --->   "%dw_addr_1_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %dw_addr, i32 %xdim_read) nounwind" [backprop.cpp:24]   --->   Operation 155 'writereq' 'dw_addr_1_wr_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_34 : Operation 156 [1/1] (1.76ns)   --->   "br label %.preheader1" [backprop.cpp:23]   --->   Operation 156 'br' <Predicate = true> <Delay = 1.76>
+
+State 35 <SV = 9> <Delay = 8.75>
+ST_35 : Operation 157 [1/1] (0.00ns)   --->   "%j2_0 = phi i31 [ %j_1, %2 ], [ 0, %.preheader1.preheader ]"   --->   Operation 157 'phi' 'j2_0' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 158 [1/1] (0.00ns)   --->   "%zext_ln23 = zext i31 %j2_0 to i32" [backprop.cpp:23]   --->   Operation 158 'zext' 'zext_ln23' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 159 [1/1] (2.47ns)   --->   "%icmp_ln23 = icmp slt i32 %zext_ln23, %xdim_read" [backprop.cpp:23]   --->   Operation 159 'icmp' 'icmp_ln23' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 160 [1/1] (2.52ns)   --->   "%j_1 = add i31 %j2_0, 1" [backprop.cpp:23]   --->   Operation 160 'add' 'j_1' <Predicate = true> <Delay = 2.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 161 [1/1] (0.00ns)   --->   "br i1 %icmp_ln23, label %2, label %3" [backprop.cpp:23]   --->   Operation 161 'br' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 162 [7/7] (8.75ns)   --->   "%dy_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy_addr, i32 1) nounwind" [backprop.cpp:24]   --->   Operation 162 'readreq' 'dy_load_1_req' <Predicate = (icmp_ln23)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_35 : Operation 163 [5/5] (8.75ns)   --->   "%dw_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %dw_addr) nounwind" [backprop.cpp:24]   --->   Operation 163 'writeresp' 'dw_addr_1_wr_resp' <Predicate = (!icmp_ln23)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 36 <SV = 10> <Delay = 8.75>
+ST_36 : Operation 164 [6/7] (8.75ns)   --->   "%dy_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy_addr, i32 1) nounwind" [backprop.cpp:24]   --->   Operation 164 'readreq' 'dy_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 37 <SV = 11> <Delay = 8.75>
+ST_37 : Operation 165 [5/7] (8.75ns)   --->   "%dy_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy_addr, i32 1) nounwind" [backprop.cpp:24]   --->   Operation 165 'readreq' 'dy_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 38 <SV = 12> <Delay = 8.75>
+ST_38 : Operation 166 [4/7] (8.75ns)   --->   "%dy_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy_addr, i32 1) nounwind" [backprop.cpp:24]   --->   Operation 166 'readreq' 'dy_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 39 <SV = 13> <Delay = 8.75>
+ST_39 : Operation 167 [3/7] (8.75ns)   --->   "%dy_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy_addr, i32 1) nounwind" [backprop.cpp:24]   --->   Operation 167 'readreq' 'dy_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 40 <SV = 14> <Delay = 8.75>
+ST_40 : Operation 168 [2/7] (8.75ns)   --->   "%dy_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy_addr, i32 1) nounwind" [backprop.cpp:24]   --->   Operation 168 'readreq' 'dy_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 41 <SV = 15> <Delay = 8.75>
+ST_41 : Operation 169 [1/7] (8.75ns)   --->   "%dy_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy_addr, i32 1) nounwind" [backprop.cpp:24]   --->   Operation 169 'readreq' 'dy_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 42 <SV = 16> <Delay = 8.75>
+ST_42 : Operation 170 [1/1] (8.75ns)   --->   "%dy_addr_read = call float @_ssdm_op_Read.m_axi.floatP(float* %dy_addr) nounwind" [backprop.cpp:24]   --->   Operation 170 'read' 'dy_addr_read' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_42 : Operation 171 [1/1] (8.75ns)   --->   "%x_read = call float @_ssdm_op_Read.m_axi.floatP(float* %x) nounwind" [backprop.cpp:24]   --->   Operation 171 'read' 'x_read' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 43 <SV = 17> <Delay = 5.70>
+ST_43 : Operation 172 [4/4] (5.70ns)   --->   "%tmp_1 = fmul float %dy_addr_read, %x_read" [backprop.cpp:24]   --->   Operation 172 'fmul' 'tmp_1' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 18> <Delay = 5.70>
+ST_44 : Operation 173 [3/4] (5.70ns)   --->   "%tmp_1 = fmul float %dy_addr_read, %x_read" [backprop.cpp:24]   --->   Operation 173 'fmul' 'tmp_1' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 45 <SV = 19> <Delay = 5.70>
+ST_45 : Operation 174 [2/4] (5.70ns)   --->   "%tmp_1 = fmul float %dy_addr_read, %x_read" [backprop.cpp:24]   --->   Operation 174 'fmul' 'tmp_1' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 46 <SV = 20> <Delay = 5.70>
+ST_46 : Operation 175 [1/4] (5.70ns)   --->   "%tmp_1 = fmul float %dy_addr_read, %x_read" [backprop.cpp:24]   --->   Operation 175 'fmul' 'tmp_1' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 47 <SV = 21> <Delay = 8.75>
+ST_47 : Operation 176 [1/1] (8.75ns)   --->   "call void @_ssdm_op_Write.m_axi.floatP(float* %dw_addr, float %tmp_1, i4 -1) nounwind" [backprop.cpp:24]   --->   Operation 176 'write' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_47 : Operation 177 [1/1] (0.00ns)   --->   "br label %.preheader1" [backprop.cpp:23]   --->   Operation 177 'br' <Predicate = true> <Delay = 0.00>
+
+State 48 <SV = 10> <Delay = 8.75>
+ST_48 : Operation 178 [4/5] (8.75ns)   --->   "%dw_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %dw_addr) nounwind" [backprop.cpp:24]   --->   Operation 178 'writeresp' 'dw_addr_1_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 49 <SV = 11> <Delay = 8.75>
+ST_49 : Operation 179 [3/5] (8.75ns)   --->   "%dw_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %dw_addr) nounwind" [backprop.cpp:24]   --->   Operation 179 'writeresp' 'dw_addr_1_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 50 <SV = 12> <Delay = 8.75>
+ST_50 : Operation 180 [2/5] (8.75ns)   --->   "%dw_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %dw_addr) nounwind" [backprop.cpp:24]   --->   Operation 180 'writeresp' 'dw_addr_1_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 51 <SV = 13> <Delay = 8.75>
+ST_51 : Operation 181 [1/5] (8.75ns)   --->   "%dw_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %dw_addr) nounwind" [backprop.cpp:24]   --->   Operation 181 'writeresp' 'dw_addr_1_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_51 : Operation 182 [1/1] (0.00ns)   --->   "br label %.preheader2" [backprop.cpp:22]   --->   Operation 182 'br' <Predicate = true> <Delay = 0.00>
+
+State 52 <SV = 3> <Delay = 8.75>
+ST_52 : Operation 183 [6/7] (8.75ns)   --->   "%dy_rd_req3 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:30]   --->   Operation 183 'readreq' 'dy_rd_req3' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 53 <SV = 4> <Delay = 8.75>
+ST_53 : Operation 184 [5/7] (8.75ns)   --->   "%dy_rd_req3 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:30]   --->   Operation 184 'readreq' 'dy_rd_req3' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 54 <SV = 5> <Delay = 8.75>
+ST_54 : Operation 185 [4/7] (8.75ns)   --->   "%dy_rd_req3 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:30]   --->   Operation 185 'readreq' 'dy_rd_req3' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 55 <SV = 6> <Delay = 8.75>
+ST_55 : Operation 186 [3/7] (8.75ns)   --->   "%dy_rd_req3 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:30]   --->   Operation 186 'readreq' 'dy_rd_req3' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 56 <SV = 7> <Delay = 8.75>
+ST_56 : Operation 187 [2/7] (8.75ns)   --->   "%dy_rd_req3 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:30]   --->   Operation 187 'readreq' 'dy_rd_req3' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 57 <SV = 8> <Delay = 8.75>
+ST_57 : Operation 188 [1/7] (8.75ns)   --->   "%dy_rd_req3 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %dy, i32 %ydim_read) nounwind" [backprop.cpp:30]   --->   Operation 188 'readreq' 'dy_rd_req3' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_57 : Operation 189 [1/1] (8.75ns)   --->   "%db_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %db, i32 %ydim_read) nounwind" [backprop.cpp:30]   --->   Operation 189 'writereq' 'db_wr_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_57 : Operation 190 [1/1] (1.76ns)   --->   "br label %.preheader" [backprop.cpp:29]   --->   Operation 190 'br' <Predicate = true> <Delay = 1.76>
+
+State 58 <SV = 9> <Delay = 8.75>
+ST_58 : Operation 191 [1/1] (0.00ns)   --->   "%i3_0 = phi i31 [ %i_2, %4 ], [ 0, %.preheader.preheader ]"   --->   Operation 191 'phi' 'i3_0' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 192 [1/1] (0.00ns)   --->   "%zext_ln29 = zext i31 %i3_0 to i32" [backprop.cpp:29]   --->   Operation 192 'zext' 'zext_ln29' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 193 [1/1] (2.47ns)   --->   "%icmp_ln29 = icmp slt i32 %zext_ln29, %ydim_read" [backprop.cpp:29]   --->   Operation 193 'icmp' 'icmp_ln29' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_58 : Operation 194 [1/1] (2.52ns)   --->   "%i_2 = add i31 %i3_0, 1" [backprop.cpp:29]   --->   Operation 194 'add' 'i_2' <Predicate = true> <Delay = 2.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_58 : Operation 195 [1/1] (0.00ns)   --->   "br i1 %icmp_ln29, label %4, label %5" [backprop.cpp:29]   --->   Operation 195 'br' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 196 [1/1] (8.75ns)   --->   "%dy_read_1 = call float @_ssdm_op_Read.m_axi.floatP(float* %dy) nounwind" [backprop.cpp:30]   --->   Operation 196 'read' 'dy_read_1' <Predicate = (icmp_ln29)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_58 : Operation 197 [5/5] (8.75ns)   --->   "%db_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %db) nounwind" [backprop.cpp:30]   --->   Operation 197 'writeresp' 'db_wr_resp' <Predicate = (!icmp_ln29)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 59 <SV = 10> <Delay = 8.75>
+ST_59 : Operation 198 [1/1] (8.75ns)   --->   "call void @_ssdm_op_Write.m_axi.floatP(float* %db, float %dy_read_1, i4 -1) nounwind" [backprop.cpp:30]   --->   Operation 198 'write' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_59 : Operation 199 [1/1] (0.00ns)   --->   "br label %.preheader" [backprop.cpp:29]   --->   Operation 199 'br' <Predicate = true> <Delay = 0.00>
+
+State 60 <SV = 10> <Delay = 8.75>
+ST_60 : Operation 200 [4/5] (8.75ns)   --->   "%db_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %db) nounwind" [backprop.cpp:30]   --->   Operation 200 'writeresp' 'db_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 61 <SV = 11> <Delay = 8.75>
+ST_61 : Operation 201 [3/5] (8.75ns)   --->   "%db_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %db) nounwind" [backprop.cpp:30]   --->   Operation 201 'writeresp' 'db_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 62 <SV = 12> <Delay = 8.75>
+ST_62 : Operation 202 [2/5] (8.75ns)   --->   "%db_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %db) nounwind" [backprop.cpp:30]   --->   Operation 202 'writeresp' 'db_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 63 <SV = 13> <Delay = 8.75>
+ST_63 : Operation 203 [1/5] (8.75ns)   --->   "%db_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %db) nounwind" [backprop.cpp:30]   --->   Operation 203 'writeresp' 'db_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_63 : Operation 204 [1/1] (0.00ns)   --->   "ret void" [backprop.cpp:32]   --->   Operation 204 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', backprop.cpp:15) [36]  (1.77 ns)
+
+ <State 2>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:17) [44]  (8.75 ns)
+
+ <State 3>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:17) [44]  (8.75 ns)
+
+ <State 4>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:17) [44]  (8.75 ns)
+
+ <State 5>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:17) [44]  (8.75 ns)
+
+ <State 6>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:17) [44]  (8.75 ns)
+
+ <State 7>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:17) [44]  (8.75 ns)
+
+ <State 8>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:17) [44]  (8.75 ns)
+
+ <State 9>: 2.55ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul', backprop.cpp:17) with incoming values : ('add_ln17_1', backprop.cpp:17) [48]  (0 ns)
+	'add' operation ('add_ln17_1', backprop.cpp:17) [55]  (2.55 ns)
+
+ <State 10>: 8.75ns
+The critical path consists of the following:
+	'getelementptr' operation ('w_addr', backprop.cpp:17) [58]  (0 ns)
+	bus request on port 'w' (backprop.cpp:17) [59]  (8.75 ns)
+
+ <State 11>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'w' (backprop.cpp:17) [59]  (8.75 ns)
+
+ <State 12>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'w' (backprop.cpp:17) [59]  (8.75 ns)
+
+ <State 13>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'w' (backprop.cpp:17) [59]  (8.75 ns)
+
+ <State 14>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'w' (backprop.cpp:17) [59]  (8.75 ns)
+
+ <State 15>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'w' (backprop.cpp:17) [59]  (8.75 ns)
+
+ <State 16>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'w' (backprop.cpp:17) [59]  (8.75 ns)
+
+ <State 17>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'dy' (backprop.cpp:17) [54]  (8.75 ns)
+
+ <State 18>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp', backprop.cpp:17) [61]  (5.7 ns)
+
+ <State 19>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp', backprop.cpp:17) [61]  (5.7 ns)
+
+ <State 20>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp', backprop.cpp:17) [61]  (5.7 ns)
+
+ <State 21>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dx' (backprop.cpp:17) [62]  (8.75 ns)
+
+ <State 22>: 8.75ns
+The critical path consists of the following:
+	bus write on port 'dx' (backprop.cpp:17) [63]  (8.75 ns)
+
+ <State 23>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'dx' (backprop.cpp:17) [64]  (8.75 ns)
+
+ <State 24>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'dx' (backprop.cpp:17) [64]  (8.75 ns)
+
+ <State 25>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'dx' (backprop.cpp:17) [64]  (8.75 ns)
+
+ <State 26>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'dx' (backprop.cpp:17) [64]  (8.75 ns)
+
+ <State 27>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'dx' (backprop.cpp:17) [64]  (8.75 ns)
+
+ <State 28>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'x' (backprop.cpp:24) [83]  (8.75 ns)
+
+ <State 29>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'x' (backprop.cpp:24) [83]  (8.75 ns)
+
+ <State 30>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'x' (backprop.cpp:24) [83]  (8.75 ns)
+
+ <State 31>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'x' (backprop.cpp:24) [83]  (8.75 ns)
+
+ <State 32>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'x' (backprop.cpp:24) [83]  (8.75 ns)
+
+ <State 33>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'x' (backprop.cpp:24) [83]  (8.75 ns)
+
+ <State 34>: 8.75ns
+The critical path consists of the following:
+	'getelementptr' operation ('dw_addr', backprop.cpp:24) [82]  (0 ns)
+	bus request on port 'dw' (backprop.cpp:24) [84]  (8.75 ns)
+
+ <State 35>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:24) [93]  (8.75 ns)
+
+ <State 36>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:24) [93]  (8.75 ns)
+
+ <State 37>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:24) [93]  (8.75 ns)
+
+ <State 38>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:24) [93]  (8.75 ns)
+
+ <State 39>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:24) [93]  (8.75 ns)
+
+ <State 40>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:24) [93]  (8.75 ns)
+
+ <State 41>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:24) [93]  (8.75 ns)
+
+ <State 42>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'dy' (backprop.cpp:24) [94]  (8.75 ns)
+
+ <State 43>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_1', backprop.cpp:24) [96]  (5.7 ns)
+
+ <State 44>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_1', backprop.cpp:24) [96]  (5.7 ns)
+
+ <State 45>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_1', backprop.cpp:24) [96]  (5.7 ns)
+
+ <State 46>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_1', backprop.cpp:24) [96]  (5.7 ns)
+
+ <State 47>: 8.75ns
+The critical path consists of the following:
+	bus write on port 'dw' (backprop.cpp:24) [97]  (8.75 ns)
+
+ <State 48>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'dw' (backprop.cpp:24) [100]  (8.75 ns)
+
+ <State 49>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'dw' (backprop.cpp:24) [100]  (8.75 ns)
+
+ <State 50>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'dw' (backprop.cpp:24) [100]  (8.75 ns)
+
+ <State 51>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'dw' (backprop.cpp:24) [100]  (8.75 ns)
+
+ <State 52>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:30) [103]  (8.75 ns)
+
+ <State 53>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:30) [103]  (8.75 ns)
+
+ <State 54>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:30) [103]  (8.75 ns)
+
+ <State 55>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:30) [103]  (8.75 ns)
+
+ <State 56>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:30) [103]  (8.75 ns)
+
+ <State 57>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'dy' (backprop.cpp:30) [103]  (8.75 ns)
+
+ <State 58>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'dy' (backprop.cpp:30) [113]  (8.75 ns)
+
+ <State 59>: 8.75ns
+The critical path consists of the following:
+	bus write on port 'db' (backprop.cpp:30) [114]  (8.75 ns)
+
+ <State 60>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'db' (backprop.cpp:30) [117]  (8.75 ns)
+
+ <State 61>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'db' (backprop.cpp:30) [117]  (8.75 ns)
+
+ <State 62>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'db' (backprop.cpp:30) [117]  (8.75 ns)
+
+ <State 63>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'db' (backprop.cpp:30) [117]  (8.75 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

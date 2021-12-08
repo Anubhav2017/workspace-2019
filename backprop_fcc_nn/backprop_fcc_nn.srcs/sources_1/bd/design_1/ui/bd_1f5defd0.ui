@@ -1,0 +1,38 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.61375",
+   "Default View_TopLeft":"-44,-789",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 5 -x 1710 -y -160 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 1710 -y -140 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 2 -x 700 -y -110 -defaultsOSRD
+preplace inst backward_fcc_0 -pg 1 -lvl 1 -x 210 -y -200 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 4 -x 1510 -y -120 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 3 -x 1130 -y -510 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 4 -x 1510 -y -550 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 30 -70 470 -220 920 -240 1330
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 2 1 940 -530n
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 0 4 40 -60 460J -230 NJ -230 1340
+preplace netloc processing_system7_0_DDR 1 2 3 NJ -160 1320 0 1680
+preplace netloc processing_system7_0_FIXED_IO 1 2 3 NJ -140 1310 10 1690
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 2 930J -170 1310
+preplace netloc ps7_0_axi_periph_M00_AXI 1 0 5 20 20 NJ 20 NJ 20 NJ 20 1660
+preplace netloc backward_fcc_0_m_axi_x 1 1 3 380J -810 NJ -810 1340
+preplace netloc axi_mem_intercon_M00_AXI 1 1 4 480 30 NJ 30 NJ 30 1670
+preplace netloc backward_fcc_0_m_axi_b 1 1 3 390 -800 NJ -800 NJ
+preplace netloc backward_fcc_0_m_axi_db 1 1 3 410 -780 NJ -780 NJ
+preplace netloc backward_fcc_0_m_axi_dw 1 1 3 440 -760 NJ -760 NJ
+preplace netloc backward_fcc_0_m_axi_dx 1 1 3 420 -740 NJ -740 NJ
+preplace netloc backward_fcc_0_m_axi_dy 1 1 3 450 -720 NJ -720 NJ
+preplace netloc backward_fcc_0_m_axi_w 1 1 3 400 -700 NJ -700 NJ
+preplace netloc backward_fcc_0_m_axi_y 1 1 3 430 -680 NJ -680 NJ
+levelinfo -pg 1 0 210 700 1130 1510 1710
+pagesize -pg 1 -db -bbox -sgen 0 -880 1830 240
+"
+}
+{
+   "da_axi4_cnt":"9",
+   "da_ps7_cnt":"1"
+}

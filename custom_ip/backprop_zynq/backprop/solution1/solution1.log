@@ -1,0 +1,252 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'backprop.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 961.758 ; gain = 528.973 ; free physical = 4187 ; free virtual = 10881
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 961.758 ; gain = 528.973 ; free physical = 4187 ; free virtual = 10881
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 961.758 ; gain = 528.973 ; free physical = 4193 ; free virtual = 10879
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 961.758 ; gain = 528.973 ; free physical = 4194 ; free virtual = 10879
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 961.758 ; gain = 528.973 ; free physical = 4176 ; free virtual = 10862
+INFO: [HLS 200-444] Inferring multiple bus burst read of variable length on port 'dy' (backprop.cpp:17:13). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of variable length on port 'dy' (backprop.cpp:30:9). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of variable length on port 'x' (backprop.cpp:24:13). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of variable length on port 'db' (backprop.cpp:30:9). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of variable length on port 'dw' (backprop.cpp:24:13). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 961.758 ; gain = 528.973 ; free physical = 4176 ; free virtual = 10861
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'backward_fcc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'backward_fcc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 10.1 seconds; current allocated memory: 98.798 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 99.299 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'backward_fcc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'backward_fcc/x' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'backward_fcc/w' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'backward_fcc/y' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'backward_fcc/b' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'backward_fcc/dx' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'backward_fcc/dy' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'backward_fcc/db' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'backward_fcc/dw' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'backward_fcc/xdim' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'backward_fcc/ydim' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'backward_fcc' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'xdim' and 'ydim' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'backward_fcc_fmul_32ns_32ns_32_4_max_dsp_1' to 'backward_fcc_fmulbkb' due to the length limit 20
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_AWVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_AWREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_AWADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_AWID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_AWID' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_AWLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_AWSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_AWBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_AWLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_AWCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_AWPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_AWQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_AWREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_AWUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_WVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_WVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_WREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_WDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_WDATA' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_WSTRB' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_WSTRB' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_WLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_WLAST' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_WID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_WID' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_WUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_WUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_ARVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_ARREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_ARADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_ARID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_ARID' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_ARLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_ARSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_ARBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_ARLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_ARCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_ARPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_ARQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_ARREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_ARUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_RVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_RREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_RREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_RDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_RLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_RID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_RUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_RRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_BVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_BREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_y_BREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_BRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_BID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_y_BUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_AWVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_AWREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_AWADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_AWID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_AWID' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_AWLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_AWSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_AWBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_AWLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_AWCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_AWPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_AWQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_AWREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_AWUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_WVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_WVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_WREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_WDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_WDATA' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_WSTRB' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_WSTRB' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_WLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_WLAST' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_WID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_WID' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_WUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_WUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_ARVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_ARREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_ARADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_ARID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_ARID' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_ARLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'backward_fcc/m_axi_b_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'backward_fcc/m_axi_b_ARSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
